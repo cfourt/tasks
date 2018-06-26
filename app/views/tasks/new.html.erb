@@ -1,15 +1,15 @@
 <h1>Tasks</h1>
 
 
-<%= form_for :task do |form| %>
+<%= form_for :task, url: tasks_path  do |form| %>
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
   </p>
  
   <p>
-    <%= form.label :text %><br>
-    <%= form.text_area :text %>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
   </p>
  
   <p>
