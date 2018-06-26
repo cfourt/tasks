@@ -1,4 +1,4 @@
-===Tasks
+===Tasks===
 
 - [x] Get repo set up
 - [x] Create new rails app
