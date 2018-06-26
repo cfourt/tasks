@@ -1,0 +1,26 @@
+=== Tasks
+
+- [x] Get repo set up
+- [x] Create new rails app
+- [x] Spike task resource
+- [x] Create new task
+- [x] View task
+- [x] Task index
+- [ ] Read about strong params
+- [ ] Read more about routing
+- [ ] Add links for navigating around
+- [ ] Add validations
+- [ ] Update action for task
+- [ ] Set up partials for dryness
+- [ ] Delete task(s)
+- [ ] Add 'Completed' param
+- [ ] Add option to set .completed
+- [ ] Add logic and updated view for completed tasks
+- [ ] Add due date (no logic)
+- [ ] Find gem to set due date nicely
+- [ ] Add logic for date comparisions
+- [ ] Add past due logic
+- [ ] Basic AF login screen, single user
+- [ ] Add Users model
+- [ ] Set up task's relation to User
+- [ ] Allow for multiple user login
