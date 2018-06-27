@@ -8,6 +8,7 @@
 - [x] Task index
 - [ ] Read about strong params
 - [ ] Read more about routing
+- [ ] Switch to haml
 - [ ] Add links for navigating around
 - [ ] Add validations
 - [ ] Update action for task
