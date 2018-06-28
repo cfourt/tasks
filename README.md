@@ -7,12 +7,13 @@
 - [x] View task
 - [x] Task index
 - [x] [Read about strong params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
-- [ ] [Read more about routing](http://guides.rubyonrails.org/v4.2/routing.html)
+- [x] [Read more about routing](http://guides.rubyonrails.org/v4.2/routing.html)
 - [ ] [Read more about model validations](http://guides.rubyonrails.org/v4.2/active_record_validations.html)
 - [ ] Switch to haml
-- [ ] Add links for navigating around
-- [ ] Add validations
-- [ ] Update action for task
+- [x] Add links for navigating around
+- [x] Add validations
+- [x] Update action for task
+- [x] Edit action for task
 - [ ] Set up partials for dryness
 - [ ] Delete task(s)
 - [ ] Add 'Completed' param
