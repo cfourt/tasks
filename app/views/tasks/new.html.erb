@@ -2,6 +2,21 @@
 
 
 <%= form_for :task, url: tasks_path  do |form| %>
+  
+  <% if @task.errors.any?%>
+    <samp id="error_explanation">
+      <details open="">
+        <summary> <%= pluralize(@task.errors.count, "error") %> prohibited
+        this task from being saved:</summary>
+        <ul>
+          <% @task.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </details>
+    </samp>
+  <% end %>
+
   <p>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -13,6 +28,7 @@
   </p>
  
   <p>
+    <%= link_to (content_tag :button, 'Cancel'), tasks_path %>
     <%= form.submit %>
   </p>
 <% end %>

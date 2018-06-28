@@ -6,8 +6,9 @@
 - [x] Create new task
 - [x] View task
 - [x] Task index
-- [ ] Read about strong params
-- [ ] Read more about routing
+- [x] [Read about strong params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
+- [ ] [Read more about routing](http://guides.rubyonrails.org/v4.2/routing.html)
+- [ ] [Read more about model validations](http://guides.rubyonrails.org/v4.2/active_record_validations.html)
 - [ ] Switch to haml
 - [ ] Add links for navigating around
 - [ ] Add validations

@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  
+  #creates all html resources
   resources :tasks
-  get 'welcome/index'
-  root 'welcome#index'
+  
+  root 'tasks#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

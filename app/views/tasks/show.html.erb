@@ -1,2 +1,4 @@
 <h1><%= @task.title %></h1>
+<%= link_to (content_tag :button, 'Back to Tasks'), tasks_path %>
+<%= link_to (content_tag :button, ('Edit "' + @task.title + '"')), edit_task_path %>
 <p><%= @task.description %></p>
