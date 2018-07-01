@@ -27,3 +27,5 @@
 - [ ] Add Users model
 - [ ] Set up task's relation to User
 - [ ] Allow for multiple user login
+- [x] [Install Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/contents/)
+- [ ] Style pages

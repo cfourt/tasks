@@ -1,0 +1,8 @@
+.row
+	%h1= @task.title
+
+.row
+	=link_to (content_tag :button, 'Back to Tasks'), tasks_path
+	=link_to (content_tag :button, ('Edit "' + @task.title + '"')), edit_task_path
+
+%p= @task.description
