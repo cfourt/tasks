@@ -1,0 +1,14 @@
+.row
+  %h1 Tasks
+  =link_to (content_tag :button, 'New Todo'), new_task_path
+
+.row
+  %table
+    %tr
+      %th Title
+      %th Description
+
+    - @tasks.each do |t|
+      %tr
+        %td= link_to t.title, task_path(t)
+        %td= t.description

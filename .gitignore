@@ -22,3 +22,7 @@
 
 # dump
 *.dump
+
+#sublime workspaces
+*.sublime-workspace
+*.sublime-project
