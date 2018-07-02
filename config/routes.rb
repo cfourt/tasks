@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
   #creates all html resources
-  resources :tasks
+  resources :tasks do
+    member do
+      patch 'completed'
+      patch 'completed_at'
+    end
+  end
   
   root 'tasks#index'
 

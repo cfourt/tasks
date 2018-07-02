@@ -7,8 +7,13 @@
     %tr
       %th Title
       %th Description
+      %th
 
     - @tasks.each do |t|
       %tr
         %td= link_to t.title, task_path(t)
         %td= t.description
+        %td 
+          - if !t.completed?
+            = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, redirect_to: tasks_path
+            -# this definitely doesn't work right now  

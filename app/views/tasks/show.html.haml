@@ -3,6 +3,9 @@
 
 .row
 	=link_to (content_tag :button, 'Back to Tasks'), tasks_path
-	=link_to (content_tag :button, ('Edit "' + @task.title + '"')), edit_task_path
+	=link_to (content_tag :button, ('Edit'), edit_task_path
+	=link_to (content_tag :button, 'Delete'), task_path(@task),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
 
 %p= @task.description

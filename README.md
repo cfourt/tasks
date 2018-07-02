@@ -14,9 +14,9 @@
 - [x] Add validations
 - [x] Update action for task
 - [x] Edit action for task
-- [ ] Set up partials for dryness
-- [ ] Delete task(s)
-- [ ] Add 'Completed' param
+- [x] Set up partials for dryness
+- [x] Delete task(s)
+- [x] Add 'Completed' param
 - [ ] Add option to set .completed
 - [ ] Add logic and updated view for completed tasks
 - [ ] Add due date (no logic)
