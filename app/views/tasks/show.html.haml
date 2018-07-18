@@ -2,7 +2,7 @@
 	%h1= @task.title
 
 .row
-	%p Completed: =@task.completed?
+	%p=@task.completed?
 
 .row
 	=link_to 'Back to Tasks', tasks_path
