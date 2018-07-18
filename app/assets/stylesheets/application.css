@@ -13,6 +13,25 @@
  *= require_tree .
  *= require_self
  */
-* {
+/** {
 	font-family: 'Helvetica-Neue', 'Arial'
+}*/
+
+.past-due {
+	color: red;
+	font-weight: bold;
+}
+
+.coming-up{
+	color: orange;
+	font-weight: bold;	
+}
+
+.subtle{
+	color: #858585;
+	font-style: italic;
+}
+
+.row-completed{
+	text-decoration: line-through;
 }

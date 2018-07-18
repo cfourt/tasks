@@ -20,10 +20,12 @@
 - [x] Add option to set .completed
 - [x] Add logic and updated view for completed tasks
 - [x] Update pathing to handle desired complete UX
-- [ ] Add due date (no logic)
+- [x] Add due date (no logic)
+- [x] Update form to set and display the due date
+- [ ] Format text nicely (dupe?)
 - [ ] Find gem to set due date nicely
-- [ ] Add logic for date comparisions
-- [ ] Add past due logic
+- [x] Add logic for date comparisions
+- [x] Add past due logic
 - [ ] Basic AF login screen, single user
 - [ ] Add Users model
 - [ ] Set up task's relation to User

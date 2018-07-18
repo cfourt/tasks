@@ -3,16 +3,18 @@
   =link_to (content_tag :button, 'New Todo'), new_task_path
 
 .row
-  %table
+  %table.table.table-sm
     %tr
       %th Title
       %th Description
+      %th Due Date
       %th
 
     - @tasks.each do |t|
-      %tr
+      %tr{class: "#{'row-completed' if t.completed?}"}
         %td= link_to t.title, task_path(t)
         %td= t.description
+        %td= task_due_date(t)
         %td 
           - if !t.completed?
             = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put
