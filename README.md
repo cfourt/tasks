@@ -9,7 +9,7 @@
 - [x] [Read about strong params](http://edgeguides.rubyonrails.org/action_controller_overview.html#strong-parameters)
 - [x] [Read more about routing](http://guides.rubyonrails.org/v4.2/routing.html)
 - [ ] [Read more about model validations](http://guides.rubyonrails.org/v4.2/active_record_validations.html)
-- [ ] Switch to haml
+- [x] Switch to haml
 - [x] Add links for navigating around
 - [x] Add validations
 - [x] Update action for task
@@ -17,8 +17,9 @@
 - [x] Set up partials for dryness
 - [x] Delete task(s)
 - [x] Add 'Completed' param
-- [ ] Add option to set .completed
-- [ ] Add logic and updated view for completed tasks
+- [x] Add option to set .completed
+- [x] Add logic and updated view for completed tasks
+- [x] Update pathing to handle desired complete UX
 - [ ] Add due date (no logic)
 - [ ] Find gem to set due date nicely
 - [ ] Add logic for date comparisions
