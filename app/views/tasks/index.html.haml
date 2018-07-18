@@ -16,4 +16,3 @@
         %td 
           - if !t.completed?
             = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, redirect_to: tasks_path
-            -# this definitely doesn't work right now  

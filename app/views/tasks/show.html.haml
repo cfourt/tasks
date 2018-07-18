@@ -2,9 +2,12 @@
 	%h1= @task.title
 
 .row
-	=link_to (content_tag :button, 'Back to Tasks'), tasks_path
-	=link_to (content_tag :button, ('Edit'), edit_task_path
-	=link_to (content_tag :button, 'Delete'), task_path(@task),
+	%p Completed: =@task.completed?
+
+.row
+	=link_to 'Back to Tasks', tasks_path
+	=link_to 'Edit', edit_task_path
+	=link_to 'Delete', task_path(@task),
               method: :delete,
               data: { confirm: 'Are you sure?' }
 
