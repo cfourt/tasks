@@ -29,7 +29,8 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		destination = @task
 		
-		if params[:complete]
+		comp = @task.completed
+		if @task.update(task_params) && comp != @task.completed
 			destination = :back 
 		end
 	 
