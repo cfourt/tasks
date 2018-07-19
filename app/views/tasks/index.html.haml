@@ -1,8 +1,8 @@
 .row.align-items-center
   .col-auto.mr-auto
     %h1 Tasks
-  .col-auto=link_to (content_tag :button, 'New Todo', class: 'btn btn-primary btn-sm'), new_task_path
-
+  .col-auto
+    =link_to((content_tag(:i, '', class: 'fas fa-plus mr-1')+ "New Task"), new_task_path, class: 'btn btn-primary btn-sm')
 .row
   .table-responsive
     %table.table

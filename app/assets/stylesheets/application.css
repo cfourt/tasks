@@ -50,3 +50,20 @@ thead{
 button a{
 	color: inherit;
 }
+i.back-arrow:before{
+	font-family: FontAwesome;
+	content: "\f060";
+	margin-left: -30px;
+	font-style: normal;
+	color: #858585;
+}
+a.back-link:hover{
+	text-decoration: none;
+}
+a.back-link:hover .back-arrow:hover{
+	color: #007bff;
+}
+
+h1{
+	padding-top: .75rem;
+}
