@@ -5,15 +5,17 @@
 	%p=task_due_date(@task)
 
 .row
-	%p Completed? #{@task.completed?}
+	.btn-group
+		%button.btn.btn-sm.btn-secondary=link_to 'Back to Tasks', tasks_path
+		%button.btn.btn-sm.btn-secondary=link_to 'Edit', edit_task_path
+		%button.btn.btn-sm.btn-secondary
+			=link_to 'Delete', task_path(@task),
+				method: :delete,
+				data: { confirm: 'Are you sure?' }
+.row
+	%p Completed: #{@task.completed?}
 
 .row
-	=link_to 'Back to Tasks', tasks_path
-	=link_to 'Edit', edit_task_path
-	=link_to 'Delete', task_path(@task),
-              method: :delete,
-              data: { confirm: 'Are you sure?' }
-
-%p= @task.description
+	%small.subtle= @task.description
 
 -# = debug @task

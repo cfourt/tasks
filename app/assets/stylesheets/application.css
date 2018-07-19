@@ -47,3 +47,6 @@ thead{
 .table{
 	margin-top: 20px;
 }
+button a{
+	color: inherit;
+}
