@@ -1,22 +1,31 @@
-.row
-  %h1 Tasks
-  =link_to (content_tag :button, 'New Todo'), new_task_path
+.row.align-items-center
+  .col-auto.mr-auto
+    %h1 Tasks
+  .col-auto=link_to (content_tag :button, 'New Todo', class: 'btn btn-primary btn-sm'), new_task_path
 
 .row
-  %table.table.table-sm
-    %tr
-      %th Title
-      %th Description
-      %th Due Date
-      %th
-
-    - @tasks.each do |t|
-      %tr{class: "#{'row-completed' if t.completed?}"}
-        %td= link_to t.title, task_path(t)
-        %td= t.description
-        %td= task_due_date(t)
-        %td 
-          - if !t.completed?
-            = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put
-          - else
-            = link_to "Uncomplete", task_path(t, task: {completed: false, completed_at: ''}), method: :put
+  .table-responsive
+    %table.table
+      %caption
+        ="#{@tasks.count} Tasks"
+      -# %thead
+        %tr
+          %th #
+          %th Title
+          %th Due Date
+          %th
+      %tbody
+      - @tasks.each do |t|
+        %tr{class: "#{'row-completed' if t.completed?}"}
+          %td.subtle
+            =t.id
+          %th
+            =link_to t.title, task_path(t)
+            %br
+            %small.desc= t.description
+          %td= task_due_date(t)
+          %td 
+            - if !t.completed?
+              = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+            - else
+              = link_to "Uncomplete", task_path(t, task: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'

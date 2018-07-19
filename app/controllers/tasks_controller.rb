@@ -29,12 +29,12 @@ class TasksController < ApplicationController
 		@task = Task.find(params[:id])
 		destination = @task
 		
-		comp = @task.completed
-		if @task.update(task_params) && comp != @task.completed
+		@task.assign_attributes(task_params)
+		if @task.completed_changed?
 			destination = :back 
 		end
 	 
-		if @task.update(task_params)
+		if @task.save
 			redirect_to destination
 		else
 			render 'edit'

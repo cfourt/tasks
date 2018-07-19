@@ -35,3 +35,15 @@
 .row-completed{
 	text-decoration: line-through;
 }
+
+.desc{
+	color: #858585;
+}
+thead{
+	font-size: 0.9em;
+	text-transform: uppercase;
+	color: #858585;
+}
+.table{
+	margin-top: 20px;
+}
