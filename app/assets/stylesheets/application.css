@@ -67,3 +67,10 @@ a.back-link:hover .back-arrow:hover{
 h1{
 	padding-top: .75rem;
 }
+
+a.object-link:hover{
+	text-decoration: none;
+}
+.icon{
+	font-size: 0.85rem;
+}

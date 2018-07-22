@@ -7,14 +7,15 @@
 
 .row
 	.btn-group
-		=link_to 'Edit', edit_task_path, class: 'btn btn-sm btn-outline-secondary'
-		=link_to 'Delete', task_path(@task), class: 'btn btn-sm btn-outline-secondary', 
+		=link_to fa_icon('fa-pencil icon', 'Edit'), edit_task_path, class: 'btn btn-sm btn-outline-primary'
+		=link_to fa_icon('fa-trash-alt icon', 'Delete'), task_path(@task), class: 'btn btn-sm btn-outline-primary', 
 				method: :delete,
 				data: { confirm: 'Are you sure?' }
 .row.mt-2
 	%p=task_completed(@task)
 
 .row
-	%p.desc.border.p-2.rounded= @task.description
+	%a.object-link{href: "#{edit_task_path}"}
+		%p.desc.border.p-2.rounded= @task.description
 
 -# = debug @task

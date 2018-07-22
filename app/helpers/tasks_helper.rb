@@ -21,4 +21,20 @@ module TasksHelper
 			"<span class=''><p class='text-body'>Not complete</p></span>".html_safe
 		end
 	end
+
+	def fa_icon(names, label='', options={})
+    icon = if names.present?
+             options = options.merge(class: %w'far' + Array(names))
+             content_tag(:i, '', options)
+           end
+    safe_join([icon, label.presence].compact, ' ')
+  end
+
+  def fa_icon_right(label, names, options={})
+    icon = if names.present?
+             options = options.merge(class: %w'far' + Array(names))
+             content_tag(:i, '', options)
+           end
+    safe_join([label.presence, icon].compact, ' ')
+  end
 end
