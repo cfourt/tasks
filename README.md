@@ -32,5 +32,6 @@
 - [ ] Allow for multiple user login
 - [x] [Install Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/contents/)
 - [ ] Style index
+- [ ] Redo index using grid instead of table
 - [ ] Redo form in bootstrap
 - [ ] Style form
