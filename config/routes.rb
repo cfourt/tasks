@@ -6,6 +6,11 @@ Rails.application.routes.draw do
       patch 'completed'
       patch 'completed_at'
     end
+    resources :subs
+    member do
+      patch 'completed'
+      patch 'completed_at'
+    end
   end
   
   root 'tasks#index'

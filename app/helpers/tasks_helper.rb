@@ -17,7 +17,7 @@ module TasksHelper
 
 	def task_completed(task)
 		if task.completed?
-			"<span class='p-1 bg-success'><p class='text-white'><i class='fas fa-check'></i>Completed!</p></span>".html_safe
+			"<p class='text-success'><i class='fas fa-check pr-1'></i>Completed!</p>".html_safe
 		else
 			"<span class=''><p class='text-body'>Not complete</p></span>".html_safe
 		end

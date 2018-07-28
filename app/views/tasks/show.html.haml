@@ -1,21 +1,72 @@
 .row.align-items-center
-	=back_link(tasks_path)
-	%h1= @task.title
+  =back_link(tasks_path)
+  %h1= @task.title
 
 .row
-	%p Due #{task_due_date(@task)}
+  %p Due #{task_due_date(@task)}
 
 .row
-	.btn-group
-		=link_to fa_icon('fa-pencil icon', 'Edit'), edit_task_path, class: 'btn btn-sm btn-outline-primary'
-		=link_to fa_icon('fa-trash-alt icon', 'Delete'), task_path(@task), class: 'btn btn-sm btn-outline-primary', 
-				method: :delete,
-				data: { confirm: 'Are you sure?' }
+  .btn-group
+    =link_to fa_icon('fa-pencil icon', 'Edit'), edit_task_path, class: 'btn btn-sm btn-outline-primary'
+    =link_to fa_icon('fa-trash-alt icon', 'Delete'), task_path(@task), class: 'btn btn-sm btn-outline-primary', 
+        method: :delete,
+        data: { confirm: 'Are you sure?' }
 .row.mt-2
-	%p=task_completed(@task)
+  %p=task_completed(@task)
 
 .row
-	%a.object-link{href: "#{edit_task_path}"}
-		%p.desc.border.p-2.rounded= @task.description
+  %a.object-link{href: "#{edit_task_path}"}
+    %p.desc.border.p-2.rounded= @task.description
+
+ 
+.row.mt-5{style: 'font-size: .9rem;'}
+  =link_to fa_icon('fa-plus icon', 'Add Subtask'), "#subtask", 'data-toggle': "collapse", role: "button", 'aria-expanded':"false", 'aria-controls':"subtask"
+  %table.table
+    %caption
+      ="#{@task.subs.count} Subasks"
+    %tbody
+    - @task.subs.each do |s|
+      %tr{class: "#{'row-completed' if s.completed?}"}
+        %th
+          =s.title
+          %br
+          %small.desc= s.description
+        %td= task_due_date(s)
+        %td 
+          - if !s.completed?
+            = link_to "Complete", task_sub_path(@task, s, subtask: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+
+        
+      
+
+
+.row.collapse{id:'subtask'}
+  .col-auto
+    = simple_form_for [@task , @task.subs.build] do |f|
+      -# - if @task.errors.any?
+      -#   %samp#error_explanation
+      -#     %details{:open => ""}
+      -#       %summary
+      -#         = pluralize(@task.errors.count, "error")
+      -#         prohibited
+      -#         this task from being saved:
+      -#       %ul
+      -#         - @task.errors.full_messages.each do |msg|
+      -#           %li= msg
+      %p
+        = f.label :title
+        %br/
+        = f.text_field :title
+      %p
+        = f.label :due_date
+        %br/
+        = f.datetime_select :due_date  
+      %p
+        = f.label :description
+        %br/
+        = f.text_area :description
+      %p
+        = link_to (content_tag :button, 'Cancel', class: 'btn btn-sm btn-light'), task_path(@task)
+        = f.submit 'Save Subtask', class: 'btn btn-sm btn-success' 
 
 -# = debug @task

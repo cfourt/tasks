@@ -8,12 +8,6 @@
     %table.table
       %caption
         ="#{@tasks.count} Tasks"
-      -# %thead
-        %tr
-          %th #
-          %th Title
-          %th Due Date
-          %th
       %tbody
       - @tasks.each do |t|
         %tr{class: "#{'row-completed' if t.completed?}"}
