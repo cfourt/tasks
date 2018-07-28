@@ -1,6 +1,6 @@
 .row
   .col-auto
-    = form_for @task do |form|
+    = simple_form_for @task do |f|
       - if @task.errors.any?
         %samp#error_explanation
           %details{:open => ""}
@@ -12,17 +12,17 @@
               - @task.errors.full_messages.each do |msg|
                 %li= msg
       %p
-        = form.label :title
+        = f.label :title
         %br/
-        = form.text_field :title
+        = f.text_field :title
       %p
-        = form.label :due_date
+        = f.label :due_date
         %br/
-        = form.datetime_select :due_date  
+        = f.datetime_select :due_date  
       %p
-        = form.label :description
+        = f.label :description
         %br/
-        = form.text_area :description
+        = f.text_area :description
       %p
         = link_to (content_tag :button, 'Cancel', class: 'btn btn-sm btn-light'), tasks_path
-        = form.submit 'Save Task', class: 'btn btn-sm btn-success' 
+        = f.submit 'Save Task', class: 'btn btn-sm btn-success' 
