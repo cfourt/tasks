@@ -33,8 +33,11 @@
           %small.desc= s.description
         %td= task_due_date(s)
         %td 
-          - if !s.completed?
-            = link_to "Complete", task_sub_path(@task, s, subtask: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+          - unless s.completed?
+            = link_to fa_icon('fa-check'), task_sub_path(@task, s, subtask: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+          -# else
+            =# link_to fa_icon('fa-undo'), task_sub_path(@task, s, subtask: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'
+
 
         
       

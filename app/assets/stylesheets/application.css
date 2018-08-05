@@ -50,6 +50,7 @@ thead{
 button a{
 	color: inherit;
 }
+
 i.back-arrow:before{
 	font-family: FontAwesome;
 	content: "\f060";
@@ -73,4 +74,7 @@ a.object-link:hover{
 }
 .icon{
 	font-size: 0.85rem;
+}
+.nowrap{
+	white-space: nowrap;
 }

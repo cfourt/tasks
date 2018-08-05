@@ -6,6 +6,7 @@ module TasksHelper
 		if due_date.nil?
 			link_to 'Add due date', edit_task_path(task), class: 'subtle'
 		elsif due_date < Time.now && !task.completed
+			task.past_due = true
 			content_tag(:span, output, class: 'text-danger', title: 'Task is past due')
 		elsif due_date.today? && !task.completed
 			content_tag(:span, output, class: 'text-warning', title: 'Task is due soon')
@@ -24,18 +25,18 @@ module TasksHelper
 	end
 
 	def fa_icon(names, label='', options={})
-    icon = if names.present?
+    	icon = if names.present?
              options = options.merge(class: %w'far' + Array(names))
              content_tag(:i, '', options)
            end
-    safe_join([icon, label.presence].compact, ' ')
-  end
+    	safe_join([icon, label.presence].compact, ' ')
+  	end
 
-  def fa_icon_right(label, names, options={})
-    icon = if names.present?
-             options = options.merge(class: %w'far' + Array(names))
-             content_tag(:i, '', options)
-           end
-    safe_join([label.presence, icon].compact, ' ')
-  end
+	def fa_icon_right(label, names, options={})
+		icon = if names.present?
+		         options = options.merge(class: %w'far' + Array(names))
+		         content_tag(:i, '', options)
+		       end
+		safe_join([label.presence, icon].compact, ' ')
+	end
 end

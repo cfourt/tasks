@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180728195724) do
+ActiveRecord::Schema.define(version: 20180804233355) do
 
   create_table "subs", force: :cascade do |t|
     t.string   "title"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 20180728195724) do
     t.boolean  "completed"
     t.datetime "completed_at"
     t.datetime "due_date"
+    t.boolean  "past_due"
   end
 
 end

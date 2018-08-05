@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 	def index
-		@tasks = Task.all
+		@tasks = Task.order("past_due desc, completed")
 	end
 
 	def show

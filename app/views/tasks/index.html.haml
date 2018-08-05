@@ -9,17 +9,17 @@
       %caption
         ="#{@tasks.count} Tasks"
       %tbody
-      - @tasks.each do |t|
-        %tr{class: "#{'row-completed' if t.completed?}"}
-          %td.subtle
-            =t.id
-          %th
-            =link_to t.title, task_path(t)
-            %br
-            %small.desc= t.description
-          %td= task_due_date(t)
-          %td 
-            - if !t.completed?
-              = link_to "Complete", task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
-            - else
-              = link_to "Uncomplete", task_path(t, task: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'
+        -@tasks.each do |t|
+          %tr{class: "#{'row-completed' if t.completed?}"}
+            %td.subtle
+              =t.id
+            %th
+              =link_to t.title, task_path(t)
+              %br
+              %small.desc= t.description
+            %td.nowrap= task_due_date(t)
+            %td.text-center
+              - if !t.completed?
+                = link_to fa_icon('fa-check'), task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+              - else
+                = link_to fa_icon('fa-undo'), task_path(t, task: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'
