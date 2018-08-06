@@ -17,14 +17,14 @@
 	font-family: 'Helvetica-Neue', 'Arial'
 }*/
 
-.past-due {
+.danger {
+	font-weight: 600;
 	color: red;
-	font-weight: bold;
 }
 
-.coming-up{
-	color: orange;
-	font-weight: bold;	
+.warning{
+	color: #ff8000;
+	font-weight: 600;
 }
 
 .subtle{
@@ -34,11 +34,18 @@
 
 .row-completed{
 	text-decoration: line-through;
+	opacity: 0.7;
 }
 
 .desc{
 	color: #858585;
 }
+
+progress{
+	height: 1rem;
+	width: auto;
+}
+
 thead{
 	font-size: 0.9em;
 	text-transform: uppercase;

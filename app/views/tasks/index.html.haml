@@ -2,7 +2,17 @@
   .col-auto.mr-auto
     %h1 Tasks
   .col-auto
-    =link_to((content_tag(:i, '', class: 'fas fa-plus mr-1')+ "New Task"), new_task_path, class: 'btn btn-primary btn-sm')
+    =link_to fa_icon('fa-plus-circle', 'New Task'), new_task_path, class: 'btn btn-primary btn-sm'
+.row.mt-3
+  .col
+    - if @tasks.count > 0
+      - completed = @tasks.where(completed: true).count
+      - computed = (completed.to_f/@tasks.count.to_f*100).round(0)
+      .progress{style:"height: 4px;"}
+        .progress-bar.bg-success{"aria-valuemax": @tasks.count, "aria-valuemin": "0", "aria-valuenow": completed, role: "progressbar", style:"width: #{computed}%"}
+      
+      
+
 .row
   .table-responsive
     %table.table
@@ -11,15 +21,15 @@
       %tbody
         -@tasks.each do |t|
           %tr{class: "#{'row-completed' if t.completed?}"}
-            %td.subtle
-              =t.id
+            -# %td.subtle
+              =#t.id
             %th
               =link_to t.title, task_path(t)
               %br
               %small.desc= t.description
             %td.nowrap= task_due_date(t)
             %td.text-center
-              - if !t.completed?
-                = link_to fa_icon('fa-check'), task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-success'
+              - unless t.completed?
+                = link_to fa_icon('fa-check'), task_path(t, task: {completed: true, completed_at: Time.now}), method: :put, class: 'btn btn-sm btn-light'
               - else
                 = link_to fa_icon('fa-undo'), task_path(t, task: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'
