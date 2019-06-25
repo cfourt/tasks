@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 		
 		@task.assign_attributes(task_params)
 		if @task.completed_changed?
-			destination = :back 
+			destination = :back
 		end
 	 
 		if @task.save
@@ -48,9 +48,9 @@ class TasksController < ApplicationController
 		redirect_to tasks_path
 	end
 
-	private 
+	private
 	
 	def task_params
-		params.require(:task).permit(:title, :description, :completed, :completed_at, :due_date)
+		params.require(:task).permit(:title, :description, :completed, :completed_at, :past_due, :due_date, sub_attributes: [:id, :completed, :completed_at])
 	end
 end

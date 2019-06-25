@@ -6,7 +6,7 @@ module TasksHelper
 		if due_date.nil?
 			link_to 'Add due date', edit_task_path(task), class: 'subtle'
 		elsif due_date < Time.now && !task.completed
-			task.past_due = true
+			# task.past_due = true
 			content_tag(:span, output + ' ago', class: 'danger', title: 'Task is past due')
 		elsif due_date < (1.day.from_now) && !task.completed
 			content_tag(:span, 'in ' + output, class: 'warning', title: 'Task is due soon')
@@ -23,7 +23,7 @@ module TasksHelper
     if due_date.nil?
       link_to 'Add due date', edit_task_path(task), class: 'subtle'
     elsif due_date < Time.now && !task.completed
-      task.past_due = true
+      # task.past_due = true
       content_tag(:span, fa_icon('fa-calendar-exclamation', 'Due ' + output + ' ago'), class: 'danger', title: 'Task is past due')
     elsif due_date < (1.day.from_now) && !task.completed
       content_tag(:span, fa_icon('fa-calendar-alt', 'Due in ' + output), class: 'warning', title: 'Task is due soon')

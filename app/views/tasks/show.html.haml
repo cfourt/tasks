@@ -7,7 +7,7 @@
 
 .row
   .btn-group
-    =link_to fa_icon('fa-pencil icon', 'Edit'), edit_task_path, class: 'btn btn-sm btn-outline-primary'
+    =link_to fa_icon('fa-edit icon', 'Edit'), edit_task_path, class: 'btn btn-sm btn-outline-primary'
     =link_to fa_icon('fa-trash-alt icon', 'Delete'), task_path(@task), class: 'btn btn-sm btn-outline-primary', 
         method: :delete,
         data: { confirm: 'Are you sure?' }
@@ -21,23 +21,23 @@
   .col-auto.mr-auto
     %h2 Subtasks
   .col-auto
-  =link_to fa_icon('fa-plus-circle icon', 'Add Subtask'), "#subtask", 'data-toggle': "collapse", role: "button", 'aria-expanded':"false", 'aria-controls':"subtask"
+  =link_to fa_icon('fa-plus-circle icon', 'Add Subtask'), "#subtask", class: 'btn btn-sm btn-outline-primary', 'data-toggle': "collapse", role: "button", 'aria-expanded':"false", 'aria-controls':"subtask"
   %table.table
     %caption
       ="#{@task.subs.count} Subtasks"
     %tbody
-    - @task.subs.each do |s|
-      %tr{class: "#{'row-completed' if s.completed?}"}
+    - @task.subs.each do |sub|
+      %tr{class: "#{'row-completed' if sub.completed?}"}
         %th
-          =s.title
+          =sub.title
           %br
-          %small.desc= s.description
-        %td.nowrap= task_due_date(s)
+          %small.desc= sub.description
+        %td.nowrap= task_due_date(sub)
         %td 
-          - unless s.completed?
-            = link_to fa_icon('fa-check'), task_sub_path(@task, s, completed: true, completed_at: Time.now), method: :put, class: 'btn btn-sm btn-light'
-          -# else
-            =# link_to fa_icon('fa-undo'), task_sub_path(@task, s, subtask: {completed: false, completed_at: ''}), method: :put, class: 'btn btn-sm btn-light'
+          - unless sub.completed?
+            = link_to fa_icon('fa-check'), sub_path(sub, completed: true, completed_at: Time.now), method: :patch, class: 'btn btn-sm btn-light'
+          - else
+            = link_to fa_icon('fa-undo'), sub_path(sub, completed: false, completed_at: nil), method: :patch, class: 'btn btn-sm btn-light'
 
 
         
